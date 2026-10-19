@@ -1,11 +1,11 @@
 // Compact CLI for managing src/games.json without reading the whole file.
 // Usage:
-//   node scripts/games.mjs info [count]          Next free weekdays + recent games (one line each)
+//   node scripts/games.mjs info [count]          Next free dates + recent games (one line each)
 //   node scripts/games.mjs add [--replace] "<game>" ["<game>" ...]
 //   node scripts/games.mjs add [--replace] --file games.txt   One game per line
 //   node scripts/games.mjs validate
 // Game format: DATE|difficulty|theme|Category: W1, W2, W3, W4|...  (exactly 4 groups)
-//   DATE may be "next" for the next free weekday. theme may be empty.
+//   DATE may be "next" for the next free date. theme may be empty.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { validateGames } from '../src/game.js';
 
@@ -29,11 +29,11 @@ function save(games) {
   writeFileSync(FILE, `[\n${items.join(',\n')}\n]\n`);
 }
 
-function nextWeekday(dates) {
+function nextDate(dates) {
   const last = [...dates].sort().at(-1) ?? new Date().toISOString().slice(0, 10);
   const day = new Date(`${last}T12:00:00Z`);
   do day.setUTCDate(day.getUTCDate() + 1);
-  while ([0, 6].includes(day.getUTCDay()) || dates.has(day.toISOString().slice(0, 10)));
+  while (dates.has(day.toISOString().slice(0, 10)));
   return day.toISOString().slice(0, 10);
 }
 
@@ -41,7 +41,7 @@ function parse(line, dates) {
   const [date, difficulty = '', theme, ...groups] = line.split('|').map(part => part.trim());
   if (groups.length !== 4) throw new Error(`Expected 4 groups: ${line}`);
   return {
-    date: date === 'next' ? nextWeekday(dates) : date,
+    date: date === 'next' ? nextDate(dates) : date,
     difficulty: difficulty.toLowerCase(),
     ...(theme ? { theme } : {}),
     groups: groups.map(group => {
@@ -62,10 +62,10 @@ if (command === 'info') {
   const dates = new Set(games.map(g => g.date));
   const free = [];
   for (let i = 0; i < 5; i++) {
-    free.push(nextWeekday(dates));
+    free.push(nextDate(dates));
     dates.add(free.at(-1));
   }
-  console.log(`games: ${games.length}; next free weekdays: ${free.join(' ')}`);
+  console.log(`games: ${games.length}; next free dates: ${free.join(' ')}`);
   for (const g of games.slice(-(Number(args[0]) || 15))) {
     console.log(`${g.date} ${g.difficulty} ${g.theme ?? '-'}: ${g.groups.map(x => x.category).join('; ')}`);
   }

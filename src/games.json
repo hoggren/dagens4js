@@ -55,6 +55,28 @@
     ]
   },
   {
+    "date": "2026-10-17",
+    "difficulty": "medium",
+    "theme": "Hushåll",
+    "groups": [
+      { "category": "Möbler", "words": ["SOFFA", "STOL", "SÄNG", "HYLLA"] },
+      { "category": "Frukter", "words": ["APPELSIN", "BANAN", "PÄRON", "KIWI"] },
+      { "category": "___RUM", "words": ["BAD", "MAT", "SOV", "VARDAG"] },
+      { "category": "Gömda djur", "words": ["HUNDRA", "ORMBUNKE", "SKATTJAKT", "LAXERMEDEL"] }
+    ]
+  },
+  {
+    "date": "2026-10-18",
+    "difficulty": "hard",
+    "theme": "Spegelvänt",
+    "groups": [
+      { "category": "Anagrampar", "words": ["POST", "STOP", "OST", "SOT"] },
+      { "category": "Palindromer", "words": ["KAJAK", "RADAR", "ANNA", "ROTOR"] },
+      { "category": "Gömda färger", "words": ["GULASCH", "BRUNN", "VITAMIN", "GRÅT"] },
+      { "category": "Svenska landskap", "words": ["SKÅNE", "DALARNA", "SMÅLAND", "HÄRJEDALEN"] }
+    ]
+  },
+  {
     "date": "2026-10-19",
     "difficulty": "hard",
     "theme": "Metallmix",
@@ -110,6 +132,28 @@
     ]
   },
   {
+    "date": "2026-10-24",
+    "difficulty": "medium",
+    "theme": "Ljud och väder",
+    "groups": [
+      { "category": "Instrument", "words": ["FIOL", "HARPA", "FLÖJT", "TRUMMA"] },
+      { "category": "Bär", "words": ["HALLON", "LINGON", "BLÅBÄR", "HJORTRON"] },
+      { "category": "___LJUS", "words": ["NATT", "STEARIN", "VÄRME", "GRAV"] },
+      { "category": "Gömda väder", "words": ["REGNBÅGE", "ÅSKMOLN", "SNÖSLASK", "DIMSLÖJA"] }
+    ]
+  },
+  {
+    "date": "2026-10-25",
+    "difficulty": "hard",
+    "theme": "Ordspel",
+    "groups": [
+      { "category": "Anagrampar", "words": ["POST", "STOP", "OST", "SOT"] },
+      { "category": "Gömda förnamn", "words": ["ALMANACKA", "LEVANDE", "IDAG", "MOTTO"] },
+      { "category": "Ord som blir nya baklänges", "words": ["KRAM", "DEL", "NOT", "RAP"] },
+      { "category": "Svenska landskap", "words": ["SKÅNE", "DALARNA", "SMÅLAND", "HÄRJEDALEN"] }
+    ]
+  },
+  {
     "date": "2026-10-26",
     "difficulty": "medium",
     "theme": "Ljus i mörkret",
@@ -162,6 +206,28 @@
       { "category": "Dubbel konsonant", "words": ["KALL", "VASS", "RÖNN", "TALL"] },
       { "category": "Väderstreck", "words": ["NORR", "SÖDER", "ÖSTER", "VÄSTER"] },
       { "category": "Geometriska former", "words": ["KVADRAT", "ROMB", "CIRKEL", "TRIANGEL"] }
+    ]
+  },
+  {
+    "date": "2026-10-31",
+    "difficulty": "medium",
+    "theme": "Höstlov",
+    "groups": [
+      { "category": "Kläder", "words": ["JACKA", "MÖSSA", "HANDSKAR", "STÖVLAR"] },
+      { "category": "Frukter", "words": ["ÄPPLE", "PÄRON", "PLUMMON", "KIRSBÄR"] },
+      { "category": "Gömda månader", "words": ["MARSVIN", "MAJROVA", "JUNIOR", "JULIANSK"] },
+      { "category": "Ljuskällor", "words": ["FACKLA", "LAMPA", "LYKTA", "STEARINLJUS"] }
+    ]
+  },
+  {
+    "date": "2026-11-01",
+    "difficulty": "hard",
+    "theme": "Nummer och geografi",
+    "groups": [
+      { "category": "Gömda tal", "words": ["STRESS", "SEXTANT", "TVÅL", "FEMININ"] },
+      { "category": "Gömda färger", "words": ["GULASCH", "BRUNN", "VITAMIN", "GRÅT"] },
+      { "category": "Palindromer", "words": ["KAJAK", "RADAR", "ANNA", "ROTOR"] },
+      { "category": "Väderstreck", "words": ["NORR", "SÖDER", "ÖSTER", "VÄSTER"] }
     ]
   },
   {

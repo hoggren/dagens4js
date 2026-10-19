@@ -2,7 +2,7 @@
 
 Läs INTE `src/games.json`. Använd CLI:t, det sparar tokens.
 
-1. `npm run games:info` – visar lediga vardagar och senaste spelens kategorier (undvik upprepning).
+1. `npm run games:info` – visar lediga datum och senaste spelens kategorier (undvik upprepning).
 2. Skriv ett spel per rad och lägg till alla i ett anrop:
    `node scripts/games.mjs add "rad1" "rad2"` (eller `--file fil.txt`, `--replace` för att skriva över ett datum)
 3. CLI:t validerar, sorterar och sparar. Vid fel: rätta raden och kör igen. Läs inte filen.
@@ -12,7 +12,7 @@ Läs INTE `src/games.json`. Använd CLI:t, det sparar tokens.
 
 `DATUM|svårighet|tema|Kategori: ORD, ORD, ORD, ORD|Kategori: …|…|…`
 
-- `DATUM`: `ÅÅÅÅ-MM-DD` eller `next` (nästa lediga vardag).
+- `DATUM`: `ÅÅÅÅ-MM-DD` eller `next` (nästa lediga datum).
 - `svårighet`: `medium` eller `hard` (använd inte `easy`).
 - `tema`: kort (1–3 ord) eller tomt (`||`).
 - Exakt 4 grupper × 4 ord, 16 unika ord. Ord versaliseras automatiskt.

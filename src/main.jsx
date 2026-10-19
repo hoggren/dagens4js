@@ -30,7 +30,7 @@ function AboutGame() {
       <button className="about-button" popoverTarget="about-game">Om spelet</button>
       <div id="about-game" className="about" popover="auto">
         <h2>Om spelet</h2>
-        <p>Fyra tillsammans är ett svenskt ordpussel med ett nytt spel varje vardag. Du får 16 ord som ska delas in i fyra grupper om fyra.</p>
+        <p>Fyra tillsammans är ett svenskt ordpussel med ett nytt spel varje dag. Du får 16 ord som ska delas in i fyra grupper om fyra.</p>
         <h3>Regler</h3>
         <ul>
           <li>Markera fyra ord som du tror hör ihop och tryck på <strong>Gissa</strong>.</li>
