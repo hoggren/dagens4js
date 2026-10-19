@@ -1,9 +1,9 @@
 export const MAX_MISTAKES = 4;
-export const DIFFICULTIES = ['Lätt', 'Medel', 'Svår'];
+export const DIFFICULTIES = ['easy', 'medium', 'hard'];
 
 export function validateGames(games) {
   if (!Array.isArray(games) || games.length === 0) {
-    throw new Error('Spelfilen måste innehålla minst ett spel.');
+    throw new Error('The games file must contain at least one game.');
   }
   const dates = new Set();
   for (const game of games) {
@@ -15,17 +15,17 @@ export function validateGames(games) {
       new Date(date).toISOString().slice(0, 10) !== date ||
       dates.has(date)
     ) {
-      throw new Error('Varje spel måste ha ett unikt, giltigt datum (ÅÅÅÅ-MM-DD).');
+      throw new Error('Every game must have a unique, valid date (YYYY-MM-DD).');
     }
     dates.add(date);
     if (!DIFFICULTIES.includes(game.difficulty)) {
-      throw new Error(`Spelet ${date} måste ha svårighetsgrad: ${DIFFICULTIES.join(', ')}.`);
+      throw new Error(`Game ${date} must have a difficulty: ${DIFFICULTIES.join(', ')}.`);
     }
     if (game.theme !== undefined && (typeof game.theme !== 'string' || !game.theme.trim())) {
-      throw new Error(`Spelet ${date} har ett ogiltigt tema.`);
+      throw new Error(`Game ${date} has an invalid theme.`);
     }
     if (!Array.isArray(game.groups) || game.groups.length !== 4) {
-      throw new Error(`Spelet ${date} måste innehålla fyra grupper.`);
+      throw new Error(`Game ${date} must contain four groups.`);
     }
     const words = new Set();
     for (const group of game.groups) {
@@ -33,15 +33,15 @@ export function validateGames(games) {
         typeof group?.category !== 'string' || !group.category.trim() ||
         !Array.isArray(group.words) || group.words.length !== 4
       ) {
-        throw new Error(`Varje grupp i ${date} måste ha en kategori och fyra ord.`);
+        throw new Error(`Every group in ${date} must have a category and four words.`);
       }
       for (const word of group.words) {
         if (typeof word !== 'string' || !word.trim()) {
-          throw new Error(`Spelet ${date} innehåller ett tomt eller ogiltigt ord.`);
+          throw new Error(`Game ${date} contains an empty or invalid word.`);
         }
         const normalized = word.trim().normalize('NFC').toLocaleUpperCase('sv-SE');
         if (words.has(normalized)) {
-          throw new Error(`Spelet ${date} innehåller dubbletten ${word}.`);
+          throw new Error(`Game ${date} contains the duplicate word ${word}.`);
         }
         words.add(normalized);
       }

@@ -21,8 +21,8 @@ button:focus-visible, select:focus-visible { outline: 3px solid #2367b5; outline
 .clear-results { margin-bottom: 20px; padding: 6px 12px; font-size: .85rem; }
 .game-info { display: flex; gap: 8px; flex-wrap: wrap; }
 .badge { padding: 4px 10px; border-radius: 999px; background: #e7e4dc; font-size: .85rem; font-weight: 600; }
-.difficulty-Lätt { background: #cfe7c0; }
-.difficulty-Medel { background: #f2dd96; }
-.difficulty-Svår { background: #efb9a8; }
+.difficulty-easy { background: #cfe7c0; }
+.difficulty-medium { background: #f2dd96; }
+.difficulty-hard { background: #efb9a8; }
 .message { min-height: 3em; }
 footer { margin-top: 36px; font-size: .8rem; line-height: 1.6; color: #5a5a5a; }

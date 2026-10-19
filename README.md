@@ -13,6 +13,12 @@ npm run dev
 
 Öppna adressen som Vite skriver ut. `npm run build` skapar en statisk produktion i `dist`. `npm run preview` visar bygget lokalt. `npm test` testar spellogiken och spelfilen.
 
+## Publicera på GitHub Pages
+
+1. På GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+2. Pusha till `main`. Flödet i `.github/workflows/deploy.yml` testar, bygger och publicerar.
+3. Appen finns på `https://hoggren.github.io/dagens4js/`.
+
 ## Spel och datum
 
 Alla spel finns i `src/games.json`. Två egna exempel ingår. Lägg till ett objekt per speldag, normalt måndag–fredag:
@@ -20,7 +26,7 @@ Alla spel finns i `src/games.json`. Två egna exempel ingår. Lägg till ett obj
 ```json
 {
   "date": "2026-10-21",
-  "difficulty": "Medel",
+  "difficulty": "medium",
   "theme": "Valfritt tema",
   "groups": [
     { "category": "Kategori ett", "words": ["ORD A", "ORD B", "ORD C", "ORD D"] },
@@ -31,7 +37,7 @@ Alla spel finns i `src/games.json`. Två egna exempel ingår. Lägg till ett obj
 }
 ```
 
-Datum måste vara unika och varje spel måste ha fyra grupper med fyra unika ord. `difficulty` krävs (`Lätt`, `Medel` eller `Svår`) och `theme` är valfritt; båda visas i appen. Filen valideras när appen startar och av testerna. Gruppernas ordning bestämmer färgen.
+Datum måste vara unika och varje spel måste ha fyra grupper med fyra unika ord. `difficulty` krävs (`easy`, `medium` eller `hard`, visas som Lätt, Medel, Svår) och `theme` är valfritt; båda visas i appen. Filen valideras när appen startar och av testerna. Gruppernas ordning bestämmer färgen.
 
 Startsidan väljer senaste tillgängliga spel till och med dagens datum i svensk tidszon, eller första spelet om alla ligger i framtiden. Alla inlagda spel, även framtida, går att välja i listan. Det sker ingen automatisk hämtning från DN eller generering av nya spel. Bygg och publicera om appen efter ändringar i JSON-filen. Facit levereras till webbläsaren; detta är inget fuskskyddat system.
 

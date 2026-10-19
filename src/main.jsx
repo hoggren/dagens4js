@@ -4,11 +4,13 @@ import data from './games.json';
 import { MAX_MISTAKES, validateGames, createState, isFinished, toggleWord, submitGuess, shuffle } from './game.js';
 import './style.css';
 
-const STORAGE_KEY = 'fyra-tillsammans:resultat';
+const STORAGE_KEY = 'fyra-tillsammans:results';
+const LEGACY_STORAGE_KEY = 'fyra-tillsammans:resultat';
+const DIFFICULTY_LABELS = { easy: 'Lätt', medium: 'Medel', hard: 'Svår' };
 
 function loadResults() {
   try {
-    const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? localStorage.getItem(LEGACY_STORAGE_KEY));
     return parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : {};
   } catch {
     return {};
@@ -82,6 +84,7 @@ function App({ games }) {
     if (!window.confirm('Vill du ta bort alla sparade resultat?')) return;
     try {
       localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(LEGACY_STORAGE_KEY);
     } catch {
       // Storage can be unavailable; still clear the visible results.
     }
@@ -111,7 +114,7 @@ function App({ games }) {
       <label htmlFor="game-date">Välj spel: </label>
       <select id="game-date" value={date} onChange={event => setDate(event.target.value)}>
         {sorted.map(item => (
-          <option key={item.date} value={item.date}>{item.date} · {item.difficulty}{item.theme ? ` · ${item.theme}` : ''}{resultLabel(results[item.date])}</option>
+          <option key={item.date} value={item.date}>{item.date} · {DIFFICULTY_LABELS[item.difficulty]}{item.theme ? ` · ${item.theme}` : ''}{resultLabel(results[item.date])}</option>
         ))}
       </select>
       <p className="progress">Klarade spel: <strong>{completed}</strong> av {sorted.length}
@@ -120,7 +123,7 @@ function App({ games }) {
         <button className="clear-results" onClick={clearResults}>Ta bort resultat</button>
       )}
       <p className="game-info">
-        <span className={`badge difficulty-${game.difficulty}`}>Svårighetsgrad: {game.difficulty}</span>
+        <span className={`badge difficulty-${game.difficulty}`}>Svårighetsgrad: {DIFFICULTY_LABELS[game.difficulty]}</span>
         {game.theme && <span className="badge">Tema: {game.theme}</span>}
       </p>
       <Puzzle key={date} game={game} onFinish={saveResult} />

@@ -11,10 +11,10 @@ Använd detta arbetsflöde när du ska skapa ett eller flera nya spel i `src/gam
 
 ## 2. Välj svårighetsgrad och tema
 
-- `difficulty` krävs och måste vara exakt `Lätt`, `Medel` eller `Svår`.
-  - **Lätt:** mest tydliga kategorier, högst en enkel ordlek.
-  - **Medel:** blandning, minst en ordlek och några fällor.
-  - **Svår:** minst två ordlekar/stavningsgrupper och flera fällor.
+- `difficulty` krävs och måste vara exakt `easy`, `medium` eller `hard` (visas som Lätt, Medel, Svår).
+  - **easy:** mest tydliga kategorier, högst en enkel ordlek.
+  - **medium:** blandning, minst en ordlek och några fällor.
+  - **hard:** minst två ordlekar/stavningsgrupper och flera fällor.
 - `theme` är valfritt: en kort rubrik (1–3 ord), till exempel `Gömda ord`. Utelämna fältet om spelet saknar tydligt tema.
 - Variera svårighet över veckan, gärna lättare tidigt och svårare mot fredag.
 
@@ -58,7 +58,7 @@ Bra typer av ordlekskategorier:
 ```json
 {
   "date": "2026-10-23",
-  "difficulty": "Svår",
+  "difficulty": "hard",
   "theme": "Ordlekar",
   "groups": [
     { "category": "Lätt kategori", "words": ["ORD1", "ORD2", "ORD3", "ORD4"] },

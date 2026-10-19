@@ -19,7 +19,7 @@ test('invalid dates, duplicate dates, groups and words are rejected', () => {
     data => { data[0].groups[0].words[0] = ' '; },
     data => { data[0].groups[0].words[0] = 'päron'; },
     data => { delete data[0].difficulty; },
-    data => { data[0].difficulty = 'Extrem'; },
+    data => { data[0].difficulty = 'Lätt'; },
     data => { data[0].theme = ' '; },
   ]) {
     const copy = structuredClone(games);

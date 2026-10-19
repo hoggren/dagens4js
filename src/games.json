@@ -1,7 +1,7 @@
 [
   {
     "date": "2026-10-19",
-    "difficulty": "Lätt",
+    "difficulty": "easy",
     "theme": "Vardagsmix",
     "groups": [
       { "category": "Frukter", "words": ["ÄPPLE", "PÄRON", "BANAN", "APELSIN"] },
@@ -12,7 +12,7 @@
   },
   {
     "date": "2026-10-20",
-    "difficulty": "Lätt",
+    "difficulty": "easy",
     "groups": [
       { "category": "Planeter", "words": ["MARS", "VENUS", "JUPITER", "SATURNUS"] },
       { "category": "Verktyg", "words": ["HAMMARE", "SÅG", "TÅNG", "HYVEL"] },
@@ -22,7 +22,7 @@
   },
   {
     "date": "2026-10-21",
-    "difficulty": "Medel",
+    "difficulty": "medium",
     "theme": "Gömda ord",
     "groups": [
       { "category": "Fiskar", "words": ["GÄDDA", "ABBORRE", "TORSK", "SILL"] },
@@ -33,7 +33,7 @@
   },
   {
     "date": "2026-10-22",
-    "difficulty": "Svår",
+    "difficulty": "hard",
     "theme": "Ordlekar",
     "groups": [
       { "category": "Nordiska gudar", "words": ["FREJ", "LOKE", "BALDER", "HEIMDALL"] },
