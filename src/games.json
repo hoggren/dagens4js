@@ -1,23 +1,79 @@
 [
   {
-    "date": "2026-10-19",
-    "difficulty": "easy",
-    "theme": "Vardagsmix",
+    "date": "2026-10-12",
+    "difficulty": "medium",
+    "theme": "Natur",
     "groups": [
-      { "category": "Frukter", "words": ["ÄPPLE", "PÄRON", "BANAN", "APELSIN"] },
-      { "category": "Danser", "words": ["VALS", "TANGO", "SALSA", "POLSKA"] },
-      { "category": "Metaller", "words": ["GULD", "SILVER", "KOPPAR", "JÄRN"] },
-      { "category": "Kortfärger", "words": ["HJÄRTER", "RUTER", "KLÖVER", "SPADER"] }
+      { "category": "Fåglar", "words": ["KRÅKA", "HÄGER", "TRANA", "SVALA"] },
+      { "category": "Träd", "words": ["BJÖRK", "LÖNN", "GRAN", "TALL"] },
+      { "category": "Väder", "words": ["DIMMA", "HAGEL", "STORM", "BLIXT"] },
+      { "category": "Gömda träd", "words": ["ALMANACKA", "PEKARE", "BOKHYLLA", "RASPA"] }
+    ]
+  },
+  {
+    "date": "2026-10-13",
+    "difficulty": "medium",
+    "theme": "Hemma",
+    "groups": [
+      { "category": "Köksredskap", "words": ["SLEV", "VISP", "DURKSLAG", "KASTRULL"] },
+      { "category": "Klädesplagg", "words": ["JACKA", "KJOL", "MÖSSA", "VANTE"] },
+      { "category": "___STOL", "words": ["GUNG", "KÖKS", "BAR", "RULL"] },
+      { "category": "___LÅDA", "words": ["BRÖD", "SKO", "MAT", "KASSA"] }
+    ]
+  },
+  {
+    "date": "2026-10-14",
+    "difficulty": "medium",
+    "theme": "Idrott",
+    "groups": [
+      { "category": "Bollsporter", "words": ["TENNIS", "GOLF", "BANDY", "RUGBY"] },
+      { "category": "Simsätt", "words": ["CRAWL", "BRÖSTSIM", "FJÄRIL", "RYGGSIM"] },
+      { "category": "___HOPP", "words": ["LÄNGD", "HÖJD", "STAV", "SKID"] },
+      { "category": "Gömda kroppsdelar", "words": ["BENSIN", "KNÄCKE", "TÅRTA", "ARMATUR"] }
+    ]
+  },
+  {
+    "date": "2026-10-15",
+    "difficulty": "hard",
+    "theme": "Bakvända ord",
+    "groups": [
+      { "category": "Huvudstäder", "words": ["OSLO", "LIMA", "BERN", "RIGA"] },
+      { "category": "___SKOLA", "words": ["SÖNDAGS", "FOLK", "HÖG", "FÖR"] },
+      { "category": "Gömda färger", "words": ["VITAMIN", "BRUNN", "GULASCH", "GRÅT"] },
+      { "category": "Nytt ord baklänges", "words": ["TRÄ", "SÄL", "GAL", "TON"] }
+    ]
+  },
+  {
+    "date": "2026-10-16",
+    "difficulty": "hard",
+    "theme": "Fredagsmix",
+    "groups": [
+      { "category": "Instrument", "words": ["FIOL", "TRUMMA", "HARPA", "FLÖJT"] },
+      { "category": "Kortspel", "words": ["POKER", "BRIDGE", "KASINO", "PATIENS"] },
+      { "category": "___KAKA", "words": ["SAND", "SOCKER", "KLADD", "SPETT"] },
+      { "category": "Gömda namn", "words": ["PERSIKA", "KULLAR", "KARNEVAL", "SIDA"] }
+    ]
+  },
+  {
+    "date": "2026-10-19",
+    "difficulty": "hard",
+    "theme": "Metallmix",
+    "groups": [
+      { "category": "Metaller", "words": ["GULD", "SILVER", "KOPPAR", "ZINK"] },
+      { "category": "Kortfärger", "words": ["HJÄRTER", "RUTER", "KLÖVER", "SPADER"] },
+      { "category": "___STEN", "words": ["GRÅ", "SAND", "NJUR", "MÅN"] },
+      { "category": "Gömda metaller", "words": ["BLYGSAM", "TENNIS", "KROMOSOM", "HJÄRNA"] }
     ]
   },
   {
     "date": "2026-10-20",
-    "difficulty": "easy",
+    "difficulty": "medium",
+    "theme": "Gudar och rymd",
     "groups": [
-      { "category": "Planeter", "words": ["MARS", "VENUS", "JUPITER", "SATURNUS"] },
-      { "category": "Verktyg", "words": ["HAMMARE", "SÅG", "TÅNG", "HYVEL"] },
-      { "category": "Årstider", "words": ["VÅR", "SOMMAR", "HÖST", "VINTER"] },
-      { "category": "Schackpjäser", "words": ["KUNG", "DAM", "TORN", "LÖPARE"] }
+      { "category": "Planeter", "words": ["MARS", "VENUS", "MERKURIUS", "NEPTUNUS"] },
+      { "category": "Schackpjäser", "words": ["KUNG", "DAM", "TORN", "LÖPARE"] },
+      { "category": "Veckodagar uppkallade efter gudar", "words": ["TISDAG", "ONSDAG", "TORSDAG", "FREDAG"] },
+      { "category": "___SKEPP", "words": ["RYMD", "VIKINGA", "LUFT", "SLAG"] }
     ]
   },
   {
@@ -40,6 +96,83 @@
       { "category": "Grönsaker", "words": ["MOROT", "PURJO", "RÄDISA", "SELLERI"] },
       { "category": "Nytt ord med S först", "words": ["PORT", "KOLA", "TOR", "KÅL"] },
       { "category": "Gömda tal", "words": ["STRESS", "SEXTANT", "TVÅL", "FEMININ"] }
+    ]
+  },
+  {
+    "date": "2026-10-23",
+    "difficulty": "hard",
+    "theme": "Ord i ord",
+    "groups": [
+      { "category": "Rotfrukter", "words": ["MOROT", "RÄDISA", "RÖDBETA", "PALSTERNACKA"] },
+      { "category": "Nytt ord med S först", "words": ["KOLA", "LAG", "KAL", "KÄRA"] },
+      { "category": "Gömda månader", "words": ["MARSVIN", "MAJROVA", "JUNIOR", "JULIANSK"] },
+      { "category": "Verktyg", "words": ["HAMMARE", "TÅNG", "SKRUVMEJSEL", "TUMSTOCK"] }
+    ]
+  },
+  {
+    "date": "2026-10-26",
+    "difficulty": "medium",
+    "theme": "Ljus i mörkret",
+    "groups": [
+      { "category": "Bär", "words": ["HALLON", "BLÅBÄR", "LINGON", "HJORTRON"] },
+      { "category": "___LJUS", "words": ["NATT", "GRAV", "VÄRME", "STEARIN"] },
+      { "category": "Grönsaker", "words": ["PURJOLÖK", "GURKA", "PAPRIKA", "BLOMKÅL"] },
+      { "category": "Musikinstrument", "words": ["FIOL", "OBOE", "FAGOTT", "TVÄRFLÖJT"] }
+    ]
+  },
+  {
+    "date": "2026-10-27",
+    "difficulty": "medium",
+    "theme": "Omvänt",
+    "groups": [
+      { "category": "Väder", "words": ["REGN", "DIMMA", "ÅSKA", "DAGG"] },
+      { "category": "Ord som blir nya baklänges", "words": ["KRAM", "DEL", "NOT", "RAP"] },
+      { "category": "Måttenheter", "words": ["METER", "LITER", "GRAM", "SEKUND"] },
+      { "category": "Fiskeredskap", "words": ["METSPÖ", "HÅV", "DRAG", "NÄT"] }
+    ]
+  },
+  {
+    "date": "2026-10-28",
+    "difficulty": "medium",
+    "theme": "Resa",
+    "groups": [
+      { "category": "Nordiska huvudstäder", "words": ["OSLO", "STOCKHOLM", "HELSINGFORS", "KÖPENHAMN"] },
+      { "category": "___BIL", "words": ["LAST", "EL", "POLIS", "RACER"] },
+      { "category": "Resehandlingar", "words": ["PASS", "VISUM", "BILJETT", "LEGITIMATION"] },
+      { "category": "Färdsätt", "words": ["TÅG", "BUSS", "FÄRJA", "SPÅRVAGN"] }
+    ]
+  },
+  {
+    "date": "2026-10-29",
+    "difficulty": "hard",
+    "theme": "Ord med dubbla vägar",
+    "groups": [
+      { "category": "Anagrampar", "words": ["POST", "STOP", "SOT", "OST"] },
+      { "category": "Gömda förnamn", "words": ["ALMANACKA", "LEVANDE", "IDAG", "MOTTO"] },
+      { "category": "Fiskar", "words": ["ABBORRE", "GÄDDA", "MÖRT", "SIK"] },
+      { "category": "Svenska landskap", "words": ["SKÅNE", "DALARNA", "SMÅLAND", "HÄRJEDALEN"] }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "difficulty": "hard",
+    "theme": "Hus och stavning",
+    "groups": [
+      { "category": "___HUS", "words": ["RÅD", "VÄXT", "DJUR", "DOCK"] },
+      { "category": "Dubbel konsonant", "words": ["KALL", "VASS", "RÖNN", "TALL"] },
+      { "category": "Väderstreck", "words": ["NORR", "SÖDER", "ÖSTER", "VÄSTER"] },
+      { "category": "Geometriska former", "words": ["KVADRAT", "ROMB", "CIRKEL", "TRIANGEL"] }
+    ]
+  },
+  {
+    "date": "2026-11-02",
+    "difficulty": "medium",
+    "theme": "Små saker",
+    "groups": [
+      { "category": "Saker med hjul", "words": ["CYKEL", "RESVÄSKA", "KONTORSSTOL", "SKATEBOARD"] },
+      { "category": "___LOCK", "words": ["GRYT", "KIST", "BRUNNS", "FLASK"] },
+      { "category": "Kryddor", "words": ["KANEL", "KARDEMUMMA", "SPISKUMMIN", "TIMJAN"] },
+      { "category": "Vilda kattdjur", "words": ["LODJUR", "LEJON", "TIGER", "PUMA"] }
     ]
   }
 ]

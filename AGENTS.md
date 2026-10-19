@@ -16,8 +16,8 @@ Läs den här filen innan du ändrar projektet. Uppdatera den när viktiga beslu
 - `src/game.js` – validering och spelregler, utan React.
 - `src/main.jsx` – gränssnitt, datumval och resultat i `localStorage`.
 - `src/style.css` – enkel styling.
-- `test/game.test.js` – tester för spelregler och spelfilen.
-- `SKILLS.md` – arbetsflöde för att skapa nya spel.
+- `scripts/games.mjs` – CLI för att visa, lägga till och validera spel.
+- `SKILLS.md` – arbetsflöde för att skapa nya spel. Läs inte hela `games.json`; använd CLI:t.
 
 ## Regler och beteende
 
@@ -28,29 +28,23 @@ Läs den här filen innan du ändrar projektet. Uppdatera den när viktiga beslu
 - En upprepad felaktig kombination kostar inget nytt misstag.
 - Startsidan väljer senaste spel till och med dagens datum i `Europe/Stockholm`.
 - Resultat sparas under `localStorage`-nyckeln `fyra-tillsammans:results` (äldre nyckel `fyra-tillsammans:resultat` läses som reserv).
+- Varje resultat sparar en signatur av spelets ord. Om ett spel ändras i `games.json` nollställs dess resultat automatiskt.
+- En vinst skrivs inte över av en senare förlust. "Ta bort resultat" rensar alla resultat.
+- Pågående spel sparas inte.
+- Knappen "Om spelet" öppnar en popover (native HTML `popover`) med kort beskrivning och regler.
+- Nya spel ska vara `medium` eller `hard`; `easy` används inte längre för nya spel.
 
 ## Språk
 
 - Text som visas i appen, spelinnehåll och dokumentation: svenska.
-- Kod, identifierare, JSON-nycklar/värden som `difficulty`, felmeddelanden i kod, kommentarer, tester, YAML och git-commits: engelska.
-- En vinst skrivs inte över av en senare förlust. "Ta bort resultat" rensar alla resultat.
-- Pågående spel sparas inte.
-
-## Spel som finns
-
-| Datum | Svårighet | Tema | Grupper |
-|---|---|---|---|
-| 2026-10-19 | Lätt | Vardagsmix | Frukter, Danser, Metaller, Kortfärger |
-| 2026-10-20 | Lätt | – | Planeter, Verktyg, Årstider, Schackpjäser |
-| 2026-10-21 | Medel | Gömda ord | Fiskar, ___BOLL, Gömda djur, Samma baklänges |
-| 2026-10-22 | Svår | Ordlekar | Nordiska gudar, Grönsaker, Nytt ord med S först, Gömda tal |
-
-Uppdatera tabellen när spel läggs till. Undvik att återanvända kategorier och ord för ofta.
+- Kod, identifierare, JSON-nycklar/värden som `difficulty`, felmeddelanden i kod, kommentarer, YAML och git-commits: engelska.
 
 ## Kommandon
 
 - `npm run dev` – starta lokalt.
-- `npm test` – kör tester och validera `games.json`.
+- `npm run games:info` – lediga datum och senaste spel (kompakt).
+- `npm run games:validate` – validera `games.json`.
+- `node scripts/games.mjs add "rad"` – lägg till spel, se `SKILLS.md`.
 - `npm run build` – produktionsbygge.
 
 ## Kända detaljer

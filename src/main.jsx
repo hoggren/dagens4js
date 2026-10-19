@@ -8,13 +8,42 @@ const STORAGE_KEY = 'fyra-tillsammans:results';
 const LEGACY_STORAGE_KEY = 'fyra-tillsammans:resultat';
 const DIFFICULTY_LABELS = { easy: 'Lätt', medium: 'Medel', hard: 'Svår' };
 
-function loadResults() {
+function loadResults(games) {
   try {
     const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? localStorage.getItem(LEGACY_STORAGE_KEY));
-    return parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : {};
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return {};
+    // Drop results for games whose content has changed since they were played.
+    return Object.fromEntries(games
+      .filter(game => parsed[game.date]?.signature === gameSignature(game))
+      .map(game => [game.date, parsed[game.date]]));
   } catch {
     return {};
   }
+}
+
+function gameSignature(game) {
+  return game.groups.map(group => group.words.join(',')).join('|');
+}
+
+function AboutGame() {
+  return (
+    <>
+      <button className="about-button" popoverTarget="about-game">Om spelet</button>
+      <div id="about-game" className="about" popover="auto">
+        <h2>Om spelet</h2>
+        <p>Fyra tillsammans är ett svenskt ordpussel med ett nytt spel varje vardag. Du får 16 ord som ska delas in i fyra grupper om fyra.</p>
+        <h3>Regler</h3>
+        <ul>
+          <li>Markera fyra ord som du tror hör ihop och tryck på <strong>Gissa</strong>.</li>
+          <li>Grupperna kan bygga på betydelse, sammansatta ord, stavning eller ord som gömmer sig i andra ord.</li>
+          <li>Varje ord hör till exakt en grupp. Se upp för ord som verkar passa på flera ställen.</li>
+          <li>Du får göra fyra misstag. Har du tre av fyra rätt får du en ledtråd.</li>
+          <li>Svårighetsgraden och temat visas ovanför spelbrädet.</li>
+        </ul>
+        <button popoverTarget="about-game" popoverTargetAction="hide">Stäng</button>
+      </div>
+    </>
+  );
 }
 
 function resultLabel(result) {
@@ -77,7 +106,7 @@ function App({ games }) {
   const defaultGame = sorted.filter(game => game.date <= today).at(-1) ?? sorted[0];
   const [date, setDate] = useState(defaultGame.date);
   const game = sorted.find(item => item.date === date);
-  const [results, setResults] = useState(loadResults);
+  const [results, setResults] = useState(() => loadResults(sorted));
   const completed = sorted.filter(item => results[item.date]?.won).length;
 
   function clearResults() {
@@ -95,7 +124,7 @@ function App({ games }) {
     setResults(current => {
       // Keep a win if the game is replayed and lost later.
       if (current[date]?.won && !result.won) return current;
-      const next = { ...current, [date]: { ...result, finishedAt: new Date().toISOString() } };
+      const next = { ...current, [date]: { ...result, signature: gameSignature(game), finishedAt: new Date().toISOString() } };
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
       } catch {
@@ -110,6 +139,7 @@ function App({ games }) {
       <header>
         <h1>Fyra tillsammans</h1>
         <p>Ett svenskt ordpussel</p>
+        <AboutGame />
       </header>
       <label htmlFor="game-date">Välj spel: </label>
       <select id="game-date" value={date} onChange={event => setDate(event.target.value)}>
@@ -127,7 +157,7 @@ function App({ games }) {
         {game.theme && <span className="badge">Tema: {game.theme}</span>}
       </p>
       <Puzzle key={date} game={game} onFinish={saveResult} />
-      <footer>Fristående ordpussel med egna exempelspel. Inte kopplat till DN.
+      <footer>Fristående ordpussel med egna exempelspel.
         <br />Resultat sparas i den här webbläsaren. Pågående spel sparas inte.</footer>
     </main>
   );

@@ -9,7 +9,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "node --test"
+    "games:info": "node scripts/games.mjs info",
+    "games:validate": "node scripts/games.mjs validate"
   },
   "dependencies": {
     "react": "^19.2.0",
