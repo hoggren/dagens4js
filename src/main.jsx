@@ -5,12 +5,11 @@ import { MAX_MISTAKES, validateGames, createState, isFinished, toggleWord, submi
 import './style.css';
 
 const STORAGE_KEY = 'fyra-tillsammans:results';
-const LEGACY_STORAGE_KEY = 'fyra-tillsammans:resultat';
 const DIFFICULTY_LABELS = { easy: 'Lätt', medium: 'Medel', hard: 'Svår' };
 
 function loadResults(games) {
   try {
-    const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? localStorage.getItem(LEGACY_STORAGE_KEY));
+    const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY));
     if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return {};
     // Drop results for games whose content has changed since they were played.
     return Object.fromEntries(games
@@ -113,7 +112,6 @@ function App({ games }) {
     if (!window.confirm('Vill du ta bort alla sparade resultat?')) return;
     try {
       localStorage.removeItem(STORAGE_KEY);
-      localStorage.removeItem(LEGACY_STORAGE_KEY);
     } catch {
       // Storage can be unavailable; still clear the visible results.
     }
@@ -139,9 +137,7 @@ function App({ games }) {
       <header>
         <h1>Fyra tillsammans</h1>
         <p>Ett svenskt ordpussel</p>
-        <AboutGame />
       </header>
-      <label htmlFor="game-date">Välj spel: </label>
       <select id="game-date" value={date} onChange={event => setDate(event.target.value)}>
         {sorted.map(item => (
           <option key={item.date} value={item.date}>{item.date} · {DIFFICULTY_LABELS[item.difficulty]}{item.theme ? ` · ${item.theme}` : ''}{resultLabel(results[item.date])}</option>
@@ -158,7 +154,9 @@ function App({ games }) {
       </p>
       <Puzzle key={date} game={game} onFinish={saveResult} />
       <footer>Fristående ordpussel med egna exempelspel.
-        <br />Resultat sparas i den här webbläsaren. Pågående spel sparas inte.</footer>
+        <br />Resultat sparas i den här webbläsaren. Pågående spel sparas inte.
+      </footer>
+      <AboutGame />
     </main>
   );
 }
