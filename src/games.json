@@ -1,0 +1,45 @@
+[
+  {
+    "date": "2026-10-19",
+    "difficulty": "Lätt",
+    "theme": "Vardagsmix",
+    "groups": [
+      { "category": "Frukter", "words": ["ÄPPLE", "PÄRON", "BANAN", "APELSIN"] },
+      { "category": "Danser", "words": ["VALS", "TANGO", "SALSA", "POLSKA"] },
+      { "category": "Metaller", "words": ["GULD", "SILVER", "KOPPAR", "JÄRN"] },
+      { "category": "Kortfärger", "words": ["HJÄRTER", "RUTER", "KLÖVER", "SPADER"] }
+    ]
+  },
+  {
+    "date": "2026-10-20",
+    "difficulty": "Lätt",
+    "groups": [
+      { "category": "Planeter", "words": ["MARS", "VENUS", "JUPITER", "SATURNUS"] },
+      { "category": "Verktyg", "words": ["HAMMARE", "SÅG", "TÅNG", "HYVEL"] },
+      { "category": "Årstider", "words": ["VÅR", "SOMMAR", "HÖST", "VINTER"] },
+      { "category": "Schackpjäser", "words": ["KUNG", "DAM", "TORN", "LÖPARE"] }
+    ]
+  },
+  {
+    "date": "2026-10-21",
+    "difficulty": "Medel",
+    "theme": "Gömda ord",
+    "groups": [
+      { "category": "Fiskar", "words": ["GÄDDA", "ABBORRE", "TORSK", "SILL"] },
+      { "category": "___BOLL", "words": ["FOT", "HAND", "SNÖ", "KÖTT"] },
+      { "category": "Gömda djur", "words": ["ORMBUNKE", "KOSTYM", "SKATTJAKT", "LAXERMEDEL"] },
+      { "category": "Samma baklänges", "words": ["KAJAK", "RADAR", "ALLA", "ROTOR"] }
+    ]
+  },
+  {
+    "date": "2026-10-22",
+    "difficulty": "Svår",
+    "theme": "Ordlekar",
+    "groups": [
+      { "category": "Nordiska gudar", "words": ["FREJ", "LOKE", "BALDER", "HEIMDALL"] },
+      { "category": "Grönsaker", "words": ["MOROT", "PURJO", "RÄDISA", "SELLERI"] },
+      { "category": "Nytt ord med S först", "words": ["PORT", "KOLA", "TOR", "KÅL"] },
+      { "category": "Gömda tal", "words": ["STRESS", "SEXTANT", "TVÅL", "FEMININ"] }
+    ]
+  }
+]

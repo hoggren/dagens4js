@@ -1,0 +1,21 @@
+{
+  "name": "dagens4js",
+  "version": "1.0.0",
+  "description": "Ett svenskt ordpussel med fyra grupper och datumstyrda spel.",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "vite": "^7.1.0"
+  }
+}
