@@ -135,7 +135,7 @@
     "groups": [
       { "category": "Delar av en stad", "words": ["PARK", "TORG", "BRO", "GATA"] },
       { "category": "Gömda väderord", "words": ["REGEMENTE", "SOLROS", "DIMRIDÅ", "SNÖRE"] },
-      { "category": "Bildar sammansättningar med STADS-", "words": ["PARK", "BUDGET", "NÄT", "KÄRNA"] },
+      { "category": "Bildar sammansättningar med STADS-", "words": ["BUDGET", "NÄT", "KÄRNA", "DEL"] },
       { "category": "Baklänges blir ett annat svenskt ord", "words": ["PIL", "MOR", "RIS", "SUM"] }
     ]
   },
