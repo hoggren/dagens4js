@@ -13,18 +13,22 @@ Läs INTE `src/games.json`. Använd CLI:t, det sparar tokens.
 `DATUM|svårighet|tema|Kategori: ORD, ORD, ORD, ORD|Kategori: …|…|…`
 
 - `DATUM`: `ÅÅÅÅ-MM-DD` eller `next` (nästa lediga datum).
-- `svårighet`: `medium` eller `hard` (använd inte `easy`).
+- `svårighet`: `medium`, `hard` eller `expert` (använd inte `easy`).
 - `tema`: kort (1–3 ord) eller tomt (`||`).
 - Exakt 4 grupper × 4 ord, 16 unika ord. Ord versaliseras automatiskt.
 - Gruppordning = färg; lättast först, svårast sist.
 
-Exempel:
+Exempel på hard:
 `next|hard|Ordlekar|Fåglar: KRÅKA, TRANA, SVALA, HÄGER|___STOL: GUNG, KÖKS, BAR, RULL|Gömda träd: ALMANACKA, PEKARE, BOKHYLLA, RASPA|Gömda tal: STRESS, SEXTANT, TVÅL, FEMININ`
 
 ## Innehållsregler
 
-- medium: minst en ordlek + fällor. hard: minst två ordlekar/stavningsgrupper + flera fällor.
+- medium: minst en ordlek och 1–3 fällor.
+- hard: minst två ordleks- eller stavningsgrupper och 3–4 fällor.
+- expert: minst tre ordleks- eller stavningsgrupper, minst två olika ordleksmekanismer och 4–6 trovärdiga fällor. Använd minst en mekanism som ändrar ordens form (baklänges, anagram eller extra/borttagen bokstav) och minst en gömd ord- eller sammansättningsmekanism. Högst en grupp får bygga enbart på en rak betydelsekategori.
 - Ordlekar: gömda ord, `___X`/`X___`-sammansättningar, baklänges, extra bokstav, anagram.
-- 1–3 fällor (ord som verkar passa i fel grupp), men varje ord hör till exakt en grupp.
-- Kontrollera gömda ord bokstav för bokstav. Vanliga svenska ord. Kopiera aldrig DN:s spel.
+- Fällor ska locka till en tydlig men felaktig gruppering; varje ord hör ändå till exakt en grupp. Räkna inte samma tvetydighet flera gånger.
+- För hard och expert: skriv en intern kontroll av varför varje fälla är fel och varför bara den avsedda gruppen fungerar.
+- Kontrollera gömda ord bokstav för bokstav och anagram/baklänges tecken för tecken. Använd vanliga svenska ord. Kopiera aldrig DN:s spel.
+- Gruppordningen ska gå från lättast till svårast; expertens sista grupp ska kräva den mest indirekta insikten.
 - Ändrade ord i ett befintligt spel nollställer spelarnas resultat för det datumet.

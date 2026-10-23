@@ -5,7 +5,7 @@ import { MAX_MISTAKES, validateGames, createState, isFinished, toggleWord, submi
 import './style.css';
 
 const STORAGE_KEY = 'fyra-tillsammans:results';
-const DIFFICULTY_LABELS = { easy: 'Lätt', medium: 'Medel', hard: 'Svår' };
+const DIFFICULTY_LABELS = { easy: 'Lätt', medium: 'Medel', hard: 'Svår', expert: 'Expert' };
 
 function loadResults(games) {
   try {
@@ -140,7 +140,7 @@ function App({ games }) {
       </header>
       <select id="game-date" value={date} onChange={event => setDate(event.target.value)}>
         {sorted.map(item => (
-          <option key={item.date} value={item.date}>{item.date} · {DIFFICULTY_LABELS[item.difficulty]}{item.theme ? ` · ${item.theme}` : ''}{resultLabel(results[item.date])}</option>
+          <option key={item.date} value={item.date}>{item.date} · {DIFFICULTY_LABELS[item.difficulty]}{resultLabel(results[item.date])}</option>
         ))}
       </select>
       <p className="progress">Klarade spel: <strong>{completed}</strong> av {sorted.length}
@@ -150,7 +150,6 @@ function App({ games }) {
       )}
       <p className="game-info">
         <span className={`badge difficulty-${game.difficulty}`}>Svårighetsgrad: {DIFFICULTY_LABELS[game.difficulty]}</span>
-        {game.theme && <span className="badge">Tema: {game.theme}</span>}
       </p>
       <Puzzle key={date} game={game} onFinish={saveResult} />
       <footer>Fristående ordpussel med egna exempelspel.

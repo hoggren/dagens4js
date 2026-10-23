@@ -1,5 +1,5 @@
 export const MAX_MISTAKES = 4;
-export const DIFFICULTIES = ['easy', 'medium', 'hard'];
+export const DIFFICULTIES = ['easy', 'medium', 'hard', 'expert'];
 
 export function validateGames(games) {
   if (!Array.isArray(games) || games.length === 0) {
