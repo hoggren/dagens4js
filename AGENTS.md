@@ -22,7 +22,7 @@ Läs den här filen innan du ändrar projektet. Uppdatera den när viktiga beslu
 ## Regler och beteende
 
 - Varje spel har exakt 4 grupper med exakt 4 ord, alltså 16 unika ord.
-- Varje spel har `difficulty` (`easy`, `medium` eller `hard`, visas som Lätt, Medel, Svår) och valfritt `theme`; båda visas i datumlistan och ovanför brädet.
+- Varje spel har `difficulty` (`easy`, `medium`, `hard` eller `expert`, visas som Lätt, Medel, Svår), som visas i datumlistan och ovanför brädet.
 - Ord skrivs med versaler och svenska tecken (Å, Ä, Ö).
 - Max 4 misstag. Tre rätt i en gissning ger en ledtråd.
 - En upprepad felaktig kombination kostar inget nytt misstag.
@@ -32,7 +32,7 @@ Läs den här filen innan du ändrar projektet. Uppdatera den när viktiga beslu
 - En vinst skrivs inte över av en senare förlust. "Ta bort resultat" rensar alla resultat.
 - Pågående spel sparas inte.
 - Knappen "Om spelet" öppnar en popover (native HTML `popover`) med kort beskrivning och regler.
-- Nya spel ska vara `medium` eller `hard`; `easy` används inte längre för nya spel.
+- Nya spel ska vara `medium`, `hard` eller `expert`; `easy` används inte längre för nya spel.
 
 ## Språk
 

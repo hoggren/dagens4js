@@ -21,9 +21,6 @@ export function validateGames(games) {
     if (!DIFFICULTIES.includes(game.difficulty)) {
       throw new Error(`Game ${date} must have a difficulty: ${DIFFICULTIES.join(', ')}.`);
     }
-    if (game.theme !== undefined && (typeof game.theme !== 'string' || !game.theme.trim())) {
-      throw new Error(`Game ${date} has an invalid theme.`);
-    }
     if (!Array.isArray(game.groups) || game.groups.length !== 4) {
       throw new Error(`Game ${date} must contain four groups.`);
     }

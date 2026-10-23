@@ -4,8 +4,8 @@
 //   node scripts/games.mjs add [--replace] "<game>" ["<game>" ...]
 //   node scripts/games.mjs add [--replace] --file games.txt   One game per line
 //   node scripts/games.mjs validate
-// Game format: DATE|difficulty|theme|Category: W1, W2, W3, W4|...  (exactly 4 groups)
-//   DATE may be "next" for the next free date. theme may be empty.
+// Game format: DATE|difficulty|Category: W1, W2, W3, W4|...  (exactly 4 groups)
+//   DATE may be "next" for the next free date.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { validateGames } from '../src/game.js';
 
@@ -20,7 +20,6 @@ process.on('uncaughtException', error => {
 function save(games) {
   const items = games.map(game => {
     const head = [`    "date": "${game.date}"`, `    "difficulty": "${game.difficulty}"`];
-    if (game.theme) head.push(`    "theme": ${JSON.stringify(game.theme)}`);
     const groups = game.groups
       .map(g => `      { "category": ${JSON.stringify(g.category)}, "words": [${g.words.map(w => JSON.stringify(w)).join(', ')}] }`)
       .join(',\n');
@@ -38,12 +37,11 @@ function nextDate(dates) {
 }
 
 function parse(line, dates) {
-  const [date, difficulty = '', theme, ...groups] = line.split('|').map(part => part.trim());
+  const [date, difficulty = '', ...groups] = line.split('|').map(part => part.trim());
   if (groups.length !== 4) throw new Error(`Expected 4 groups: ${line}`);
   return {
     date: date === 'next' ? nextDate(dates) : date,
     difficulty: difficulty.toLowerCase(),
-    ...(theme ? { theme } : {}),
     groups: groups.map(group => {
       const split = group.lastIndexOf(':');
       if (split < 1) throw new Error(`Missing "Category:" in: ${group}`);
@@ -67,7 +65,7 @@ if (command === 'info') {
   }
   console.log(`games: ${games.length}; next free dates: ${free.join(' ')}`);
   for (const g of games.slice(-(Number(args[0]) || 15))) {
-    console.log(`${g.date} ${g.difficulty} ${g.theme ?? '-'}: ${g.groups.map(x => x.category).join('; ')}`);
+    console.log(`${g.date} ${g.difficulty}: ${g.groups.map(x => x.category).join('; ')}`);
   }
 } else if (command === 'add') {
   const fileIndex = args.indexOf('--file');
@@ -83,7 +81,7 @@ if (command === 'info') {
     if (existing >= 0) next.splice(existing, 1);
     next.push(game);
     dates.add(game.date);
-    console.log(`added ${game.date} ${game.difficulty} ${game.theme ?? '-'}`);
+    console.log(`added ${game.date} ${game.difficulty}`);
   }
   next.sort((a, b) => a.date.localeCompare(b.date));
   validateGames(next);

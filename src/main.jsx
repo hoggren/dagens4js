@@ -37,7 +37,7 @@ function AboutGame() {
           <li>Grupperna kan bygga på betydelse, sammansatta ord, stavning eller ord som gömmer sig i andra ord.</li>
           <li>Varje ord hör till exakt en grupp. Se upp för ord som verkar passa på flera ställen.</li>
           <li>Du får göra fyra misstag. Har du tre av fyra rätt får du en ledtråd.</li>
-          <li>Svårighetsgraden och temat visas ovanför spelbrädet.</li>
+          <li>Svårighetsgraden visas ovanför spelbrädet.</li>
         </ul>
         <button popoverTarget="about-game" popoverTargetAction="hide">Stäng</button>
       </div>

@@ -6,20 +6,19 @@ Läs INTE `src/games.json`. Använd CLI:t, det sparar tokens.
 2. Skriv ett spel per rad och lägg till alla i ett anrop:
    `node scripts/games.mjs add "rad1" "rad2"` (eller `--file fil.txt`, `--replace` för att skriva över ett datum)
 3. CLI:t validerar, sorterar och sparar. Vid fel: rätta raden och kör igen. Läs inte filen.
-4. Svara kort: datum, svårighet, tema, kategorier.
+4. Svara kort: datum, svårighet, kategorier.
 
 ## Radformat
 
-`DATUM|svårighet|tema|Kategori: ORD, ORD, ORD, ORD|Kategori: …|…|…`
+`DATUM|svårighet|Kategori: ORD, ORD, ORD, ORD|Kategori: …|…|…`
 
 - `DATUM`: `ÅÅÅÅ-MM-DD` eller `next` (nästa lediga datum).
 - `svårighet`: `medium`, `hard` eller `expert` (använd inte `easy`).
-- `tema`: kort (1–3 ord) eller tomt (`||`).
 - Exakt 4 grupper × 4 ord, 16 unika ord. Ord versaliseras automatiskt.
 - Gruppordning = färg; lättast först, svårast sist.
 
 Exempel på hard:
-`next|hard|Ordlekar|Fåglar: KRÅKA, TRANA, SVALA, HÄGER|___STOL: GUNG, KÖKS, BAR, RULL|Gömda träd: ALMANACKA, PEKARE, BOKHYLLA, RASPA|Gömda tal: STRESS, SEXTANT, TVÅL, FEMININ`
+`next|hard|Fåglar: KRÅKA, TRANA, SVALA, HÄGER|___STOL: GUNG, KÖKS, BAR, RULL|Gömda träd: ALMANACKA, PEKARE, BOKHYLLA, RASPA|Gömda tal: STRESS, SEXTANT, TVÅL, FEMININ`
 
 ## Innehållsregler
 
